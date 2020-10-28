@@ -36,3 +36,29 @@
     }
   };
   ```
+#### - [DOM Function](../master/Chrome_app/DOM_function/index.js)
+  - Document Object Module
+#### - [Event and event handlers](../master/Chrome_app/Event_and_event_handlers/index.js)
+  - 아래와 같이 이벤트를 listen 할 수 있음
+  ``` js
+  function handleClick() {
+    title.style.color = "red"
+  }
+  // 클릭하면 title 객체의 색을 빨강으로 바꿈
+  title.addEventListener("click", handleClick);
+  ```
+  - 아래와 같이 작성 시 이벤트 확인 전 즉시 함수를 실행
+  ``` js
+  title.addEventListener("click", handleClick());
+  ```
+#### [if_else_or_and](../master/Chrome_app/if_else_or_and/index.js)
+  - JS에서는 아래와 같은 문법을 사용
+  ```js
+  if(A && B || C){
+    ...
+  } else if(D === E){
+    ...
+  } else {
+    ...
+  }
+  ```
