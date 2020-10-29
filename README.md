@@ -38,6 +38,7 @@
   ```
 #### - [DOM Function](../master/Chrome_app/DOM_function/index.js)
   - Document Object Module
+
 #### - [Event and event handlers](../master/Chrome_app/Event_and_event_handlers/index.js)
   - 아래와 같이 이벤트를 listen 할 수 있음
   ``` js
@@ -61,4 +62,32 @@
   } else {
     ...
   }
+  ```
+
+#### - [DOM_function_with_if_else](../master/Chrome_app/DOM_function_with_if_else/index.js)
+
+---
+###### 이론 끝 개발 시작
+## [OHMENTUM](../master/Chrome_app/ohmentum)
+#### - Clock
+  - 쉼표로 여러개의 변수 선언 가능
+  ```js
+  const A = document.querySelector(".clsName"),
+    B = A.querySelector("h1");
+  ```
+  - Date 클래스를 이용하여 현재 시각 사용
+  ```js
+  const date = new Date();
+  // Fri Oct 30 2020 04:36:31 GMT+0900 (대한민국 표준시)
+  const hours = date.getHours();
+  // 4
+  ```
+  - 삼항 연산자를 이용하여 한자리 수일 때 예외처리
+  ```js
+  condition ? trueValue : falseValue
+  ```
+  - setInterval 함수를 사용하여 정해진 시간마다 함수 호출
+  ```js
+  // 1000ms 마다 호출
+  setInterval(functionName, 1000);
   ```
