@@ -91,3 +91,25 @@
   // 1000ms 마다 호출
   setInterval(functionName, 1000);
   ```
+
+#### - Save Name (localStorage)
+  - url을 기준으로 저장되는 localStorage를 사용할 수 있음
+  ```js
+  const currentUser = localStorage.getItem("KEY");
+  // 없을 시 null
+
+  localStorage.setItem("KEY", "VALUE");
+  ```
+
+  - Enter 입력 시 form에서 defalut로 실행되는 submit을 방지할 수 있음
+  ```js
+  const form = document.querySelector(".js-form");
+
+  function handlerSubmit(event){
+    event.preventDefault();
+  }
+
+  form.addEventListener("submit", handlerSubmit);
+  ```
+
+  - display 설정을 다르게 한 css class와 classList의 add, remove를 이용하여 저장 유무에 따라 예외처리
