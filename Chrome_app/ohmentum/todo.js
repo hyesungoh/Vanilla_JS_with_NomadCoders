@@ -2,9 +2,23 @@ const toDoForm = document.querySelector(".js-toDoForm"),
       toDoInput = toDoForm.querySelector("input"),
       toDoList = document.querySelector(".js-toDoList");
 
-const toDos = []
+let toDos = []
 
 const TODOS_LS = "toDos"
+
+function deleteToDo(event){
+  const btn = event.target;
+  const li = btn.parentNode;
+  toDoList.removeChild(li);
+
+  // array.filter(fn)는 array안에 있는 요소들을 모두 함수 fn에 보내며
+  // return 값이 true인 것만 모아 새 array를 반환함
+  const cleanToDos = toDos.filter(function(toDo){
+    return toDo.id !== parseInt(li.id);
+  });
+  toDos = cleanToDos;
+  saveToDos();
+}
 
 function saveToDos(){
   // JSON.stringify는 모든 객체들을 문자열 형태로 만들어줌
@@ -17,6 +31,7 @@ function paintToDo(text) {
   span.innerText = text;
   const delBtn = document.createElement("button");
   delBtn.innerText = "X";
+  delBtn.addEventListener("click", deleteToDo);
   const newId = toDos.length + 1;
 
   li.appendChild(span);
@@ -53,7 +68,7 @@ function loadToDos(){
 
     parsedToDos.forEach(function(toDo){
       paintToDo(toDo.text);
-    })
+    });
   }
 }
 
