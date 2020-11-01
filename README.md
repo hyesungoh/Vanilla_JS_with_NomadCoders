@@ -113,3 +113,42 @@
   ```
 
   - display 설정을 다르게 한 css class와 classList의 add, remove를 이용하여 저장 유무에 따라 예외처리
+
+
+#### - Make to do list
+  - `createElement`, `appendChild`를 사용하여 html에 추가, `removeChild`를 사용하여 삭제
+
+  - localStorage를 이용하여 오브젝트로 이루어진 array를 저장
+
+  - ls에 설정, 불러오기 시 JSON fn을 사용
+  ```js
+  // JSON = JavaScript Object Notation
+  JSON.stringify(something);
+  // 모든 객체들을 문자열 형태로 만들어 줌
+  JSON.parse(something);
+  // 문자열을 JS 형태로 읽어줌
+
+  // python의 exec와 같은 느낌
+  ```
+
+  - array의 forEach, filter fn을 사용하여 불러왔을 때, 삭제했을 때 설정
+  ```js
+  // array에 있는 모든 요소들을 함수의 매개변수로 사용
+  array.forEach(funtion(ex){
+    console.log(ex);
+  });
+
+  // array에 있는 모든 요소들을 함수의 매개변수로 사용 후 반환 값이 true인 요소들로 이루어진 새 array를 반환
+  newArray = array.filter(funtion(ex){
+    return ex % 2 === 0;
+  });
+  ```
+
+#### - Image Background
+  - Math 모듈의 랜덤과 버림을 이용
+  ```js
+  // Math.random() * 5 = 0~5까지 랜덤으로
+  // Math.floor = 나머지 버림
+  // Math.ceil = 나머지 올림
+  const number = Math.floor(Math.random() * IMG_NUMBER);
+  ```
