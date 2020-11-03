@@ -152,3 +152,30 @@
   // Math.ceil = 나머지 올림
   const number = Math.floor(Math.random() * IMG_NUMBER);
   ```
+
+
+#### - Get weather with open API
+  - navigator를 이용하여 현재 좌표 획득
+  ```js
+  navigator.geolocation.getCurrentPosition(handleGeoSucces, handleGeoError);
+  ```
+
+  - fetch를 이용하여 API 호출
+  ```js
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+  )
+  ```
+  
+  - then을 이용하여 호출이 끝난 후 가공 및 사용
+  ```js
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+  ).then(function(response){
+    return response.json();
+  }).then(function(json){
+
+    something
+
+  });
+  ```
